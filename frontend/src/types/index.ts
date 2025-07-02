@@ -9,3 +9,10 @@ export interface NavItemWithChildren extends NavItem {
 }
 
 export type MainNavItem = NavItemWithChildren;
+
+export interface QRInfo {
+  name: string;
+  ticketNumber: string;
+  event: string;
+}
+
