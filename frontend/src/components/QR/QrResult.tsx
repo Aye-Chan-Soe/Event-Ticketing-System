@@ -1,6 +1,6 @@
 import React from "react";
 import { type QRInfo } from "@/types/index";
-import { X } from "lucide-react";
+import { X, CheckCircle } from "lucide-react";
 
 interface Props {
   info: QRInfo;
@@ -19,8 +19,15 @@ const QrResult: React.FC<Props> = ({ info, onClose }) => {
       </button>
 
       <div className="flex flex-col items-center justify-center text-center">
-        <div className="text-5xl mb-4 animate-bounce">🎉</div>
-        <h2 className="text-2xl font-bold mb-4 tracking-wide uppercase">Access Granted</h2>
+        {/* Animated glowing circle with checkmark */}
+        <div className="relative w-24 h-24 mb-6">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-500 via-yellow-400 to-purple-600 animate-spin-slow opacity-60 blur-lg"></div>
+          <div className="relative z-10 w-full h-full flex items-center justify-center bg-white/10 border border-white/30 rounded-full shadow-xl">
+            <CheckCircle className="w-12 h-12 text-green-300" />
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold mb-4 tracking-wide uppercase">Valid Ticket</h2>
 
         <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg w-full space-y-2 text-sm">
           <p>
@@ -40,6 +47,5 @@ const QrResult: React.FC<Props> = ({ info, onClose }) => {
     </div>
   );
 };
-
 
 export default QrResult;
