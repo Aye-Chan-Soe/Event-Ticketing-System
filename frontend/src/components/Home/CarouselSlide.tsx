@@ -36,17 +36,17 @@ export function CarouselSlide() {
   };
 
   return (
-    <div className="relative mx-auto mt-5 h-96 max-h-[500px] max-w-7xl px-5 lg:mt-6">
+    <div className="relative mx-auto mt-5 h-[80vh] w-full px-12 lg:mt-6">
       <Carousel
         setApi={setCarouselApi}
         opts={{ loop: true }}
-        className="z-10 h-96 max-h-[500px] w-full max-w-7xl"
+        className="z-10 h-[80vh] w-full"
       >
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
               <Card className="bg-gray-400">
-                <CardContent className="flex h-96 max-h-[500px] items-center justify-center p-6">
+                <CardContent className="flex h-[80vh] items-center justify-center p-6">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </CardContent>
               </Card>
@@ -56,18 +56,24 @@ export function CarouselSlide() {
       </Carousel>
 
       {/* Navigation Arrows */}
-      <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-between px-3">
+      <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-between px-10">
         <Button
           onClick={() => scrollToIndex(currentIndex - 1)}
-          className="pointer-events-auto h-32 w-32 rounded-full bg-transparent p-0 shadow-none hover:bg-transparent"
+          className="pointer-events-auto h-32 w-32 cursor-pointer rounded-full bg-transparent p-0 shadow-none hover:bg-transparent"
         >
-          <ChevronLeft className="size-32" strokeWidth={0.5} />
+          <ChevronLeft
+            className="size-20 cursor-pointer stroke-3 text-black"
+            strokeWidth={0.5}
+          />
         </Button>
         <Button
           onClick={() => scrollToIndex(currentIndex + 1)}
-          className="pointer-events-auto h-32 w-32 rounded-full bg-transparent p-0 shadow-none hover:bg-transparent"
+          className="pointer-events-auto h-32 w-32 cursor-pointer rounded-full bg-transparent p-0 shadow-none hover:bg-transparent"
         >
-          <ChevronRight className="size-32" strokeWidth={0.5} />
+          <ChevronRight
+            className="size-20 cursor-pointer stroke-3 text-black"
+            strokeWidth={0.5}
+          />
         </Button>
       </div>
 
@@ -77,7 +83,7 @@ export function CarouselSlide() {
           <button
             key={index}
             onClick={() => scrollToIndex(index)}
-            className={`h-3 w-3 rounded-full ${
+            className={`h-3 w-3 cursor-pointer rounded-full ${
               currentIndex === index ? "bg-black" : "bg-gray-300"
             }`}
           />
