@@ -21,7 +21,7 @@ export default function TotalCountContainer() {
     },
   ];
   return (
-    <section className="mx-12 mt-8 flex h-80 flex-row items-center justify-between bg-orange-200 px-52">
+    <section className="mx-12 my-8 flex h-80 flex-row items-center justify-between bg-orange-200 px-52">
       {dummyTotalCounts.map((d, index) => (
         <TotalCount key={index} count={d.count} label={d.label} />
       ))}
