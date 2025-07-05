@@ -1,5 +1,6 @@
 import { CarouselSlide } from "@/components/Home/CarouselSlide";
 import HomeEventList from "@/components/Home/HomeEventList";
+import TotalCountContainer from "@/components/Home/TotalCountContainer";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       {/* Event List */}
       <HomeEventList />
       {/* Total Details */}
+      <TotalCountContainer />
       {/* Venue List */}
     </div>
   );
