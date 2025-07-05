@@ -117,4 +117,16 @@
   body {
     @apply bg-background text-foreground;
   }
+  .radio-tab {
+    @apply flex cursor-pointer flex-col items-center justify-center px-5 py-2 text-sm select-none hover:border-black hover:bg-gray-300;
+  }
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    -moz-appearance: textfield;
+  }
 }
